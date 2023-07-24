@@ -1,0 +1,48 @@
+pysc2==4.0.0
+absl-py==1.4.0
+matplotlib
+pillow==9.5.0
+memory-profiler==0.61.0
+numpy==1.24.2
+
+loguru
+
+# --------------------------------------------------------------------
+# Uncomment this to use AFSIM
+# Assumes that you have access to a pip repo with py-afsim in it,
+# either official or local.
+# --------------------------------------------------------------------
+# py-afsim
+
+# --------------------------------------------------------------------
+# LINUX Specific Settings
+# --------------------------------------------------------------------
+
+# Set the protobuf version to an older version, since otherwise we get the following message:
+#
+# /home/cdorman/work/neurosymbolic/pysc2-labv2/venv/bin/python /home/cdorman/work/neurosymbolic/pysc2-labv2/interface_marine.py
+# Traceback (most recent call last):
+#   File "/home/cdorman/work/neurosymbolic/pysc2-labv2/interface_marine.py", line 1, in <module>
+#     from pysc2.agents import base_agent
+#   File "/home/cdorman/work/neurosymbolic/pysc2-labv2/venv/lib/python3.10/site-packages/pysc2/agents/base_agent.py", line 16, in <module>
+#     from pysc2.lib import actions
+#   File "/home/cdorman/work/neurosymbolic/pysc2-labv2/venv/lib/python3.10/site-packages/pysc2/lib/actions.py", line 23, in <module>
+#     from s2clientprotocol import spatial_pb2 as sc_spatial
+#   File "/home/cdorman/work/neurosymbolic/pysc2-labv2/venv/lib/python3.10/site-packages/s2clientprotocol/spatial_pb2.py", line 16, in <module>
+#     from s2clientprotocol import common_pb2 as s2clientprotocol_dot_common__pb2
+#   File "/home/cdorman/work/neurosymbolic/pysc2-labv2/venv/lib/python3.10/site-packages/s2clientprotocol/common_pb2.py", line 32, in <module>
+#     _descriptor.EnumValueDescriptor(
+#   File "/home/cdorman/work/neurosymbolic/pysc2-labv2/venv/lib/python3.10/site-packages/google/protobuf/descriptor.py", line 796, in __new__
+#     _message.Message._CheckCalledFromGeneratedFile()
+# TypeError: Descriptors cannot not be created directly.
+# If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+# If you cannot immediately regenerate your protos, some other possible workarounds are:
+#  1. Downgrade the protobuf package to 3.20.x or lower.
+#  2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+protobuf==3.19.0
+
+# Specify the version of pygame to use on Linux.  Has to be 1.9.6 or earlier;
+# otherwise, get an error with GL.  See:  https://github.com/deepmind/pysc2/issues/308
+#
+# pygame==1.9.6
+pygame
